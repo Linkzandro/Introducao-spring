@@ -7,13 +7,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class BemVindoController {
-
     @GetMapping("/")
     public String index(){
         return "index";
     }
 
-    @GetMapping("/{nome}")
+    @GetMapping("/nome/{nome}")
     public String bemVindoNome(@PathVariable("nome") String nome, Model model) {
         model.addAttribute("nome", nome);
         return "bem-vindo-pessoa";
